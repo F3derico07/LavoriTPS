@@ -1,0 +1,33 @@
+<h1> ES03D </h1>
+<script>
+function tipoDato(valore) {
+    if (valore === null) {
+        return " ^h null";
+    }
+
+    switch (typeof valore) {
+        case "number":
+            return " ^h un numero";
+        case "string":
+            return " ^h una stringa";
+        case "object":
+            return " ^h un oggetto";
+        case "function":
+            return " ^h una funzione";
+        default:
+            return "Tipo sconosciuto";
+    }
+}
+
+let val1 = 20;
+let val2 = "hello";
+let val3 = null;
+let val4 = {};
+let val5 = function () {};
+
+console.log(tipoDato(val1));
+console.log(tipoDato(val2));
+console.log(tipoDato(val3));
+console.log(tipoDato(val4));
+console.log(tipoDato(val5));
+</script>
