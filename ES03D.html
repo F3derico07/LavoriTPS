@@ -2,18 +2,18 @@
 <script>
 function tipoDato(valore) {
     if (valore === null) {
-        return " ^h null";
+        return "  null";
     }
 
     switch (typeof valore) {
         case "number":
-            return " ^h un numero";
+            return " e' un numero";
         case "string":
-            return " ^h una stringa";
+            return " e' una stringa";
         case "object":
-            return " ^h un oggetto";
+            return " e' un oggetto";
         case "function":
-            return " ^h una funzione";
+            return " e' una funzione";
         default:
             return "Tipo sconosciuto";
     }
