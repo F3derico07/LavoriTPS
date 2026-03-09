@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title> Calcolatrice</title>
+</head>
+
+<body>
+
+<h2>Calcolatrice Online</h2>
+
+<form onsubmit="calcolo(); return false;">
+    Numero A: <input type="text" id="a" required><br>
+    Numero B: <input type="text" id="b" required><br>
+    Operatore: <input type="text" id="op" placeholder="+ - * / **" required><br>
+    <button type="submit">Esegui</button>
+</form>
+
+<p id="risposta"></p>
+
+<script>
+
+function calcolo(){
+
+    // prendo i valori inseriti
+    let valoreA = document.getElementById("a").value;
+    let valoreB = document.getElementById("b").value;
+    let operatore = document.getElementById("op").value.trim();
+    let output = document.getElementById("risposta");
+
+    // trasformo in numeri
+    let numeroA = parseFloat(valoreA);
+    let numeroB = parseFloat(valoreB);
+
+    // controllo se sono numeri
+    if(isNaN(numeroA) || isNaN(numeroB)){
+        output.textContent = "Errore: inserire due numeri validi.";
+        return;
+    }
+
+    let risultato;
+
+    try{
+
+        if(operatore === "+"){
+            risultato = numeroA + numeroB;
+        }
+
+        else if(operatore === "-"){
+            risultato = numeroA - numeroB;
+        }
+
+        else if(operatore === "*"){
+            risultato = numeroA * numeroB;
+        }
+
+        else if(operatore === "/"){
+            if(numeroB === 0){
+                throw new Error("Non si può dividere per zero");
+            }
+            risultato = numeroA / numeroB;
+        }
+
+        else if(operatore === "**"){
+            risultato = numeroA ** numeroB;
+        }
+
+        else{
+            throw new Error("Operazione non valida");
+        }
+
+        output.textContent = "Risultato: " + risultato;
+
+    } catch(e){
+        output.textContent = "Errore: " + e.message;
+    }
+
+}
+
+</script>
+
+</body>
+</html>
