@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Persona</title>
+</head>
+<body>
+
+    <!-- Titolo della pagina -->
+    <h2>Inserisci i tuoi dati</h2>
+
+    <!-- Form per inserire i dati della persona -->
+    <form id="personaForm">
+
+        <!-- Campo per il nome -->
+        <label>Nome:</label>
+        <input type="text" id="nome" required><br><br>
+
+        <!-- Campo per il cognome -->
+        <label>Cognome:</label>
+        <input type="text" id="cognome" required><br><br>
+
+        <!-- Campo per l'età -->
+        <label>Età:</label>
+        <input type="number" id="eta" required><br><br>
+
+        <!-- Pulsante per inviare il form -->
+        <button type="submit">Invia</button>
+    </form>
+
+    <script>
+        // Prendo il form tramite il suo id e aggiungo un evento al momento dell'invio
+        document.getElementById("personaForm").addEventListener("submit", function(event) {
+
+            // Evito che la pagina si ricarichi quando invio il form
+            event.preventDefault();
+
+            // Recupero il valore inserito nel campo nome
+            const nome = document.getElementById("nome").value;
+
+            // Recupero il valore inserito nel campo cognome
+            const cognome = document.getElementById("cognome").value;
+
+            // Recupero l'età e la converto in numero intero
+            const eta = parseInt(document.getElementById("eta").value);
+
+            // Creo un oggetto "persona" con i dati raccolti
+            const persona = {
+                nome: nome,
+                cognome: cognome,
+                eta: eta
+            };
+
+            // Stampo l'oggetto nella console del browser
+            console.log(persona);
+        });
+    </script>
+
+</body>
+</html>
