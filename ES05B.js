@@ -1,17 +1,17 @@
-// Creo un oggetto chiamato "book" con alcune informazioni su un libro
+// Oggetto con i dati del libro
 const book = {
-  titolo: "Il nome della rosa",          // titolo del libro
-  autore: "Umberto Eco",                 // autore del libro
-  annoPubblicazione: 1980,               // anno in cui è stato pubblicato
-  genere: "Romanzo storico",             // genere del libro
-  numeroPagine: 512                      // numero totale di pagine
+  titolo: "1984",                    // nome del libro
+  autore: "George Orwell",           // chi l'ha scritto
+  annoPubblicazione: 1949,           // quando è uscito
+  genere: "Distopico",               // tipo di libro
+  numeroPagine: 328                  // quante pagine ha
 };
 
-// Uso un ciclo for...in per scorrere tutte le proprietà dell'oggetto
+// Giro tutte le proprietà dell'oggetto
 for (let key in book) {
 
-  // "key" rappresenta il nome della proprietà (es. titolo, autore, ecc.)
+  // "key" cambia ogni volta e prende il nome delle proprietà
 
-  // Stampo in console sia la chiave che il valore associato
+  // Stampo tutto in console in formato chiave -> valore
   console.log(`${key} -> ${book[key]}`);
 }
