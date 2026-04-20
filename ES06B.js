@@ -1,4 +1,4 @@
-function invertiNumero() {
+function invertiCifre() {
     // Recupero del valore inserito da terminale
     const dato = process.argv[2];
 
@@ -32,4 +32,4 @@ function invertiNumero() {
     console.log("Risultato:", finale);
 }
 
-giraNumero();
+invertiCifre();
